@@ -1,0 +1,45 @@
+{{!< default}}
+
+<article class="{{post_class}} container last-post">
+    <div class="well">
+        {{#post}}
+        <h1><span style="color: #ff7800"><</span> {{{title}}} <span style="color: #ff0099">/></span></h1>
+
+        <p class="say-title">
+            —— <img src="{{author.image}}" class="img-circle index-post-avatar" />
+            <a href="{{author.website}}" target="_blank" title="{{author.name}}">{{author.name}}</a>
+            于{{date published_at format="YYYY年MM月DD日"}}自豪地{{#if tags}}以 【{{tags}}】 {{/if}}唠嗑
+        </p>
+
+        <div class="main-content">{{content}}</div>
+
+        <hr />
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread" data-thread-key="{{url}}" data-title="{{{title}}}"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: "xcoder-ghost"
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+        <!-- JiaThis Button BEGIN -->
+        <script type="text/javascript">
+        var jiathis_config = {data_track_clickback:'true'};
+        </script>
+        <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r4.gif&amp;uid=1347875283228340" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+
+        {{/post}}
+    </div>
+</article>
+

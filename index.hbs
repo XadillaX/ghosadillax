@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#foreach posts}}
+<article class="{{post_class}} container">
+    <div class="jumbotron">
+        <h1><a href="{{url}}" title="{{{title}}}">{{{title}}}</a></h1>
+
+        <p>{{excerpt characters="10"}}...</p>
+
+        <p class="say-title">
+            —— <img src="{{author.image}}" class="img-circle index-post-avatar" />
+            <a href="{{author.website}}" target="_blank" title="{{author.name}}">{{author.name}}</a>
+            于{{date published_at format="YYYY年MM月DD日"}}自豪地{{#if tags}}以 【{{tags}}】 {{/if}}唠嗑
+        </p>
+    </div>
+</article>
+{{/foreach}}
+
+<div class="container pagination-div">
+    <div class="well">
+        {{pagination}}
+    </div>
+</div>
